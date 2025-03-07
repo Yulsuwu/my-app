@@ -1,7 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 import './App.css';
-import {Button, FormControlLabel, FormGroup} from '@material-ui/core';
+import {Box, Container, Link, Typography} from "@mui/material";
+import MenuAppBar from './components/MenuAppBar'
+function Copyright(){
+    return(
+        <Typography variant="h4" component="h1" sx={{mb: 2}}>
+            Copyright
+            <Link href="https://github.com/Yulsuwu">
+                {' Git '}
+            </Link>
+        </Typography>
+
+    );
+}
+
+function MyButton() {
+  return (
+      <button>Soy un botón</button>
+  );
+}
+export default function MyApp() {
+    return(
+        <>
+            <MenuAppBar/>
+            <Box sx={{my: 4}}>
+                <Typography>
+                    Mi primera app con react
+                </Typography>
+                <Copyright/>
+            </Box>
+        </>
+    );
+}
 
 function App() {
   return (
@@ -11,18 +42,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> practica 5.
         </p>
-        <Button variant="contained">Contained</Button>
-        <Button variant="contained" disabled>
-          Disabled
-        </Button>
-        <Button variant="contained" href="#contained-buttons">
-          Link
-        </Button>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-          <FormControlLabel required control={<Checkbox />} label="Required" />
-          <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
-        </FormGroup>
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -36,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+//export default App;
